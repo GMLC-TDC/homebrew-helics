@@ -9,11 +9,11 @@ class Helics < Formula
     cellar :any
   end
 
-  depends_on "python" => :optional
-  depends_on "python3" => :optional
+  # depends_on "python" => :optional
+  # depends_on "python3" => :optional
 
   depends_on "cmake" => :build
-  depends on "swig" => :build if build.with?("python") || build.with?("python3")
+  # depends on "swig" => :build if build.with?("python") || build.with?("python3")
 
   depends_on "boost"
   depends_on "zeromq"
@@ -24,24 +24,6 @@ class Helics < Formula
 
     mkdir "build" do
       args = std_cmake_args
-
-      if build.without?("python") && build.with?("python3")
-        args << "-DBUILD_PYTHON=ON"
-        pythonprefix = system "python-config", "--prefix"
-        # pythonprefix = ARGV.value("with-python-prefix") || pythonprefix
-        args << "-DPYTHON_LIBRARY=#{pythonprefix}/lib/libpython3.6m.dylib"
-        args << "-DPYTHON_INCLUDE_DIR=#{pythonprefix}/include/python3.6m/"
-      elsif build.with?("python") && build.without?("python3")
-        args << "-DBUILD_PYTHON=ON"
-        pythonprefix = system "python-config", "--prefix"
-        # pythonprefix = ARGV.value("with-python-prefix") || pythonprefix
-        args << "-DPYTHON_LIBRARY=#{pythonprefix}/lib/libpython2.7.dylib"
-        args << "-DPYTHON_INCLUDE_DIR=#{pythonprefix}/include/python2.7"
-      elsif build.with?("python") && build.with?("python3")
-        odie "Options --with-python and --with-python3 are mutually exclusive."
-      else
-        args << "-DBUILD_PYTHON=ON"
-      end
       system "cmake", "..", *args
       system "make", "install"
     end
