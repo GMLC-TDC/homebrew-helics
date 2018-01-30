@@ -4,4 +4,4 @@ The formulae provided in this tap are specific to HELICS. Please see [HELICS-src
 
 ## Installation instructions
 
-Please see instructions for installation over [here](https://gmlc-tdc.github.io/HELICS-src/installation/mac.html).
+Please see instructions for installation over [here](https://gmlc-tdc.github.io/HELICS-src/installation/mac.html#install-using-brew).
