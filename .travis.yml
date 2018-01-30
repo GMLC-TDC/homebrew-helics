@@ -10,3 +10,10 @@ env:
 script:
   - brew tap GMLC-TDC/helics
   - brew install -v $PACKAGE
+
+branches:
+  except:
+    - gh-pages
+
+notifications:
+  email: false
