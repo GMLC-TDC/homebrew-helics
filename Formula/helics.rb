@@ -9,11 +9,11 @@ class Helics < Formula
     cellar :any
   end
 
-  # depends_on "python" => :optional
-  # depends_on "python3" => :optional
+  option 'with-python', 'Compile Python extension'
+  option 'with-python-include-dir=', 'Path for Python include directory'
 
   depends_on "cmake" => :build
-  # depends on "swig" => :build if build.with?("python") || build.with?("python3")
+  depends_on 'swig' if build.include? 'with-python'
 
   depends_on "boost"
   depends_on "zeromq"
@@ -24,6 +24,16 @@ class Helics < Formula
 
     mkdir "build" do
       args = std_cmake_args
+
+      if build.include? 'with-python'
+        python_include_dir = ARGV.value('with-python-include-dir')
+        if python_include_dir.to_s.empty?
+          odie "Option 'with-python' requires 'with-python-include-dir' to be passed as well. Try adding '--with-python-include-dir=$(python-config --prefix)/include/python2.7/' OR '--with-python-include-dir=$(python3-config --prefix)/include/python3.6m/'"
+        end
+        args << "-DBUILD_PYTHON=ON"
+        args << "-DPYTHON_INCLUDE_DIR='#{python_include_dir}'"
+      end
+
       system "cmake", "..", *args
       system "make", "install"
     end
