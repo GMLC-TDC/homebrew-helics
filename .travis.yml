@@ -9,7 +9,7 @@ env:
   - PACKAGE=helics
 script:
   - brew tap GMLC-TDC/helics
-  - brew install -v $PACKAGE
+  - brew install -v $PACKAGE --HEAD
 
 branches:
   except:
