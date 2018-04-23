@@ -1,8 +1,8 @@
 class Helics < Formula
   desc "Hierarchical Engine for Large-scale Infrastructure Co-Simulation (HELICS)"
   homepage "https://github.com/GMLC-TDC/HELICS-src"
-  url "https://github.com/GMLC-TDC/HELICS-src/archive/v1.0.0-beta.1.tar.gz"
-  sha256 "ccf1036a4c3724e96dc534d6480cb473baac2fa942ca6a858ecba44a59d83c98"
+  url "https://github.com/GMLC-TDC/HELICS-src/archive/v1.0.1.tar.gz"
+  sha256 "17f5494783d6547d52efbbdd1b445d252a4a8702b8cc9e0d0d16a3133d673737"
   head "https://github.com/GMLC-TDC/HELICS-src.git", :branch => "develop"
 
   bottle do
@@ -20,8 +20,6 @@ class Helics < Formula
 
   def install
 
-    ENV.O0
-
     mkdir "build" do
       args = std_cmake_args
 
@@ -30,7 +28,7 @@ class Helics < Formula
         if python_include_dir.to_s.empty?
           odie "Option 'with-python' requires 'with-python-include-dir' to be passed as well. Try adding '--with-python-include-dir=$(python-config --prefix)/include/python2.7/' OR '--with-python-include-dir=$(python3-config --prefix)/include/python3.6m/'"
         end
-        args << "-DBUILD_PYTHON=ON"
+        args << "-DBUILD_PYTHON_INTERFACE=ON"
         args << "-DPYTHON_INCLUDE_DIR='#{python_include_dir}'"
       end
 
