@@ -20,6 +20,8 @@ class Helics < Formula
 
   def install
 
+    ENV.O0
+
     mkdir "build" do
       args = std_cmake_args
 
