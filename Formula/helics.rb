@@ -1,8 +1,8 @@
 class Helics < Formula
   desc "Hierarchical Engine for Large-scale Infrastructure Co-Simulation (HELICS)"
   homepage "https://github.com/GMLC-TDC/HELICS-src"
-  url "https://github.com/GMLC-TDC/HELICS-src/archive/v1.0.1.tar.gz"
-  sha256 "17f5494783d6547d52efbbdd1b445d252a4a8702b8cc9e0d0d16a3133d673737"
+  url "https://github.com/GMLC-TDC/HELICS-src/archive/v1.0.1-2.tar.gz"
+  sha256 "866d838f8806ae6b1d7200afe2fd3f4c7cae6a9b4a92404886ac34e5ef6841c3"
   head "https://github.com/GMLC-TDC/HELICS-src.git", :branch => "develop"
 
   bottle do
