@@ -13,7 +13,7 @@ class Helics < Formula
   option 'with-python-include-dir=', 'Path for Python include directory'
 
   depends_on "cmake" => :build
-  depends_on 'swig' if build.include? 'with-python'
+  depends_on 'swig' if build.include? 'with-python' => :build
 
   depends_on "boost"
   depends_on "zeromq"
