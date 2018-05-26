@@ -35,7 +35,7 @@ class Helics < Formula
       end
 
       system "cmake", "..", *args
-      system "make", "install"
+      system "make", "-j8", "install"
     end
   end
 
