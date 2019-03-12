@@ -28,7 +28,7 @@ class Helics < Formula
     mkdir "build" do
       args = std_cmake_args
 
-      if build.include? 'with-python'
+      if build.with?('python')
         args << "-DBUILD_PYTHON_INTERFACE=ON"
       end
 
