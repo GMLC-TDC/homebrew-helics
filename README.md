@@ -6,7 +6,7 @@ The formulae provided in this tap are specific to HELICS. Please see [HELICS-src
 
 ## Install
 
-Please see instructions for installation over [here](https://gmlc-tdc.github.io/HELICS-src/installation/mac.html#install-using-brew).
+Please see instructions for installation over [here](https://helics.readthedocs.io/en/latest/installation/package_manager.html#install-using-brew-macos).
 
 ## Report
 
