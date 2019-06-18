@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/GMLC-TDC/homebrew-helics.svg?branch=master)](https://travis-ci.org/GMLC-TDC/homebrew-helics)
 
-The formulae provided in this tap are specific to HELICS. Please see [HELICS-src](https://github.com/GMLC-TDC/HELICS-src) for more information.
+The formulae provided in this tap are specific to HELICS. Please see [HELICS](https://github.com/GMLC-TDC/HELICS) for more information.
 
 ## Install
 
