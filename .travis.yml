@@ -6,11 +6,21 @@ install:
   - mkdir -p $(brew --repo)/Library/Taps/GMLC-TDC
   - ln -s $PWD $(brew --repo)/Library/Taps/GMLC-TDC/homebrew-helics
   - brew tap --repair
+  
 env:
-  - PACKAGE=helics
+  global:
+    - PACKAGE=helics
+
+jobs:
+  include:
+    - env: VERSION="--HEAD"
+    # Make sure the stable version builds for formula updates getting merged to master
+    - if: branch = master
+      env: VERSION=""
+      
 script:
   - brew tap GMLC-TDC/helics
-  - brew install -v $PACKAGE --HEAD
+  - brew install -v $PACKAGE $VERSION
 
 branches:
   except:
