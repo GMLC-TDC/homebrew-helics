@@ -31,7 +31,7 @@ class Helics < Formula
         args << "-DBUILD_PYTHON_INTERFACE=ON"
       end
 
-      system "cmake", "..", *args
+      system "cmake", "..", *args, "-DBUILD_HELICS_TESTS=OFF"
       system "make", "-j8", "install"
     end
   end
