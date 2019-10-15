@@ -1,7 +1,5 @@
 
-*deprecated*
-
-Please use `conda install -c gmlc-tdc helics` instead.
+**deprecated** Please use `conda install -c gmlc-tdc helics` instead.
 
 ___
 
