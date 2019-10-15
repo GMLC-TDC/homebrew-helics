@@ -1,5 +1,9 @@
 # GMLC-TDC/homebrew-helics
 
+*deprecated*
+
+Please use `conda install -c gmlc-tdc helics` instead.
+
 [![Build Status](https://travis-ci.org/GMLC-TDC/homebrew-helics.svg?branch=master)](https://travis-ci.org/GMLC-TDC/homebrew-helics)
 
 The formulae provided in this tap are specific to HELICS. Please see [HELICS](https://github.com/GMLC-TDC/HELICS) for more information.
